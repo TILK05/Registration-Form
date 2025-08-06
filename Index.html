@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ETHIO–CANADA Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #008000, #ff0000, white, red, white, #ff0000);
+      color: #333;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      background: #fff;
+      max-width: 500px;
+      margin: auto;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    .logo {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+
+    .logo img {
+      width: 80px;
+      height: 80px;
+    }
+
+    h2 {
+      text-align: center;
+      background: linear-gradient(to right, green, red);
+      color: white;
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="tel"],
+    input[type="date"],
+    input[type="file"],
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #aaa;
+      border-radius: 5px;
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      padding: 12px;
+      margin-top: 20px;
+      background-color: green;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: darkgreen;
+    }
+
+    .note {
+      font-size: 12px;
+      color: gray;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="logo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/All_Seeing_Eye.svg" alt="Illuminati Logo">
+    </div>
+
+    <h2>ETHIO–ILLUMINATI REGISTRATION-FORM</h2>
+
+    <form>
+
+      <label for="fullname">Full Name:</label>
+      <input type="text" id="fullname" name="fullname" required>
+
+      <label for="fathername">Father's Name:</label>
+      <input type="text" id="fathername" name="fathername" required>
+
+      <label for="age">Age (18+):</label>
+      <input type="number" id="age" name="age" min="18" required>
+
+      <label for="gender">Sex:</label>
+      <select id="gender" name="gender" required>
+        <option value="">--Select--</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+
+      <label for="photo">Passport Size Photo:</label>
+      <input type="file" id="photo" name="photo" accept="image/*" required>
+      <p class="note">*Only image files</p>
+
+      <label for="nationalid">National ID (Back + Front):</label>
+      <input type="file" id="nationalid" name="nationalid" accept="image/*" multiple required>
+
+      <label for="birthdate">Birth Date (1950 - 2017 E.C):</label>
+      <input type="date" id="birthdate" name="birthdate" min="1957-01-01" max="2025-01-01" required>
+
+      <label for="phone">Phone Number (+2519... or +2517...):</label>
+      <input type="tel" id="phone" name="phone" pattern="^\+251[79][0-9]{8}$" placeholder="+2519..." required>
+      <p class="note">*Only +2517 or +2519 numbers allowed</p>
+
+      <label for="region">Region:</label>
+      <select id="region" name="region" required>
+        <option value="">--Select Region--</option>
+        <option value="Amhara">Amhara (Bahir Dar)</option>
+        <option value="Oromia">Oromia (Adama)</option>
+        <option value="Tigray">Tigray (Mekele)</option>
+        <option value="Somali">Somali (Jijiga)</option>
+        <option value="Afar">Afar (Semera)</option>
+        <option value="Sidama">Sidama (Hawasa)</option>
+      </select>
+
+      <input type="submit" value="Register">
+
+    </form>
+  </div>
+
+</body>
+</html>
