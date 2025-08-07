@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ethio-Illuminati Registration</title>
+    <title>Advanced Ethio-Illuminati Registration</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -11,124 +11,157 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #121212;
+            background: linear-gradient(135deg, #333333, #555555); /* Medium Gray Background */
             color: #e5e7eb;
         }
-        h1 {
+        h1, h2 {
             font-family: 'Cinzel', serif;
+            color: #ffffff;
         }
         .form-container {
-            background-color: #1f2937;
+            background-color: #444444; /* Darker Gray Form Container */
         }
+        /* 3D Pyramid with Shining Top and Bloody Base */
         .logo-svg {
-            animation: pulse-glow 3s infinite ease-in-out;
+            transform: perspective(1000px) rotateX(20deg) rotateZ(0deg);
         }
-        .logo-svg path {
-            fill: #c5a45e;
-            stroke: #e2e8f0;
+        .pyramid-base {
+            fill: black;
+            stroke: #222;
             stroke-width: 1;
+            background: linear-gradient(to bottom, black 70%, #8b0000);
+            -webkit-mask: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M50 5 L90 95 L10 95 Z"/></svg>') center/contain no-repeat;
+            mask: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M50 5 L90 95 L10 95 Z"/></svg>') center/contain no-repeat;
         }
-        .logo-svg .eye-circle {
+        .pyramid-top {
+            fill: #ffeb3b; /* Bright gold for shining top */
+            filter: drop-shadow(0 0 10px #ffeb3b); /* Stronger shine */
+            animation: top-shine 2s infinite ease-in-out;
+            transform-origin: center top;
+        }
+        .eye-circle {
             fill: #3b82f6;
-            stroke: #93c5fd;
-            stroke-width: 0.5;
+            animation: eye-pulse 1.5s infinite;
         }
-        .logo-svg .eye-pupil {
-            fill: #1f2937;
+        .eye-pupil {
+            fill: #111827;
         }
-        .logo-svg .eye-shine {
-            fill: #ffffff;
+        @keyframes top-shine {
+            0%, 100% { transform: scale(1); filter: drop-shadow(0 0 10px #ffeb3b); }
+            50% { transform: scale(1.05); filter: drop-shadow(0 0 15px #ffeb3b); }
         }
-        @keyframes pulse-glow {
-            0%, 100% { filter: drop-shadow(0 0 2px rgba(197, 164, 94, 0.5)); }
-            50% { filter: drop-shadow(0 0 8px rgba(197, 164, 94, 1)); }
+        @keyframes eye-pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
         }
-        input[type="file"]::file-selector-button {
-            background-color: #3b82f6;
-            color: white;
-            padding: 8px 16px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background-color 0.3s;
+        .step-content {
+            display: none;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
         }
-        input[type="file"]::file-selector-button:hover {
-            background-color: #2563eb;
+        .step-content.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .progress-bar {
+            height: 8px;
+            background-color: #666;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .progress-bar-fill {
+            height: 100%;
+            width: 0;
+            background-color: #c5a45e;
+            transition: width 0.5s ease-in-out;
+        }
+        input:invalid:not(:focus):not(:placeholder-shown) {
+            border-color: #ef4444;
+        }
+        /* White input fields */
+        .form-container input, .form-container select {
+            background-color: #ffffff;
+            color: #333;
+            border-color: #777;
+        }
+        .form-container label {
+            color: #ddd;
         }
     </style>
 </head>
 <body class="p-4 sm:p-8 flex items-center justify-center min-h-screen">
     <div class="form-container p-6 sm:p-10 rounded-xl shadow-lg w-full max-w-4xl border border-gray-700">
         <div class="flex flex-col items-center mb-8">
-            <!-- New, more detailed SVG logo -->
             <div class="w-24 h-24 mb-4">
                 <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="logo-svg">
-                    <!-- Pyramid Base -->
-                    <path d="M50 5 L90 95 L10 95 Z" stroke="#e2e8f0" stroke-width="2" fill="none"/>
-                    <!-- Pyramid Layers -->
-                    <path d="M50 5 L85 85 L15 85 Z" fill="#c5a45e" stroke="#1f2937" stroke-width="1"/>
-                    <path d="M50 5 L80 75 L20 75 Z" fill="#b08d4b" stroke="#1f2937" stroke-width="1"/>
-                    <path d="M50 5 L75 65 L25 65 Z" fill="#9d763a" stroke="#1f2937" stroke-width="1"/>
-                    <path d="M50 5 L70 55 L30 55 Z" fill="#88602b" stroke="#1f2937" stroke-width="1"/>
-                    <!-- Eye -->
-                    <g transform="translate(50, 45)">
-                        <circle class="eye-circle" cx="0" cy="0" r="10" />
-                        <circle class="eye-pupil" cx="0" cy="0" r="4" />
-                        <path class="eye-shine" d="M3 3 L5 5 L6 3 L3 3 Z" />
+                    <defs>
+                        <linearGradient id="bloodyBase" x1="0%" y1="70%" x2="0%" y2="100%">
+                            <stop offset="0%" style="stop-color:black;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#8b0000;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <path class="pyramid-base" d="M50 5 L90 95 L10 95 Z" style="fill: url(#bloodyBase);" />
+                    <path class="pyramid-top" d="M50 5 L60 35 L40 35 Z" />
+                    <g transform="translate(50, 30)">
+                        <circle class="eye-circle" cx="0" cy="0" r="8" />
+                        <circle class="eye-pupil" cx="0" cy="0" r="3" />
                     </g>
                 </svg>
             </div>
-            <h1 class="text-3xl sm:text-4xl font-extrabold text-center text-white tracking-widest uppercase">ETHIO-ILLUMINATI</h1>
-            <p class="text-sm text-gray-400 mt-2">The time of change has come.</p>
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-center tracking-widest uppercase">ETHIO-ILLUMINATI</h1>
+            <p class="text-sm text-gray-400 mt-2">Begin your registration journey.</p>
         </div>
-        <form id="registrationForm" class="space-y-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Personal Information Section -->
-                <div class="space-y-6">
-                    <div>
-                        <label for="full-name" class="block text-sm font-medium text-gray-300">FULL NAME</label>
-                        <input type="text" id="full-name" name="full-name" placeholder="First Last" required class="mt-1 block w-full rounded-md border-gray-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 bg-gray-800 text-white p-2">
-                    </div>
 
-                    <div>
-                        <label for="age" class="block text-sm font-medium text-gray-300">AGE (>=18)</label>
-                        <input type="number" id="age" name="age" min="18" placeholder="e.g., 25" required class="mt-1 block w-full rounded-md border-gray-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 bg-gray-800 text-white p-2">
-                    </div>
+        <div class="progress-bar mb-8">
+            <div id="progressBarFill" class="progress-bar-fill"></div>
+        </div>
 
+        <form action="https://formsubmit.co/dagneendalew34@gmail.com" method="POST" enctype="multipart/form-data" id="multiStepForm" class="space-y-8">
+            <input type="hidden" name="_subject" value="New Ethio-Illuminati Member Registration!">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_next" value="https://yourdomain.co/thanks.html"> <div id="step1" class="step-content active">
+                <h2 class="text-2xl font-bold mb-6 text-center">1. Personal Information</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                        <label class="block text-sm font-medium text-gray-300">SEX</label>
-                        <div class="mt-2 flex space-x-4">
-                            <label class="flex items-center">
-                                <input id="sex-female" name="sex" type="radio" value="female" required class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 bg-gray-800">
-                                <span class="ml-2 text-sm font-medium text-gray-300">Female</span>
-                            </label>
-                            <label class="flex items-center">
-                                <input id="sex-male" name="sex" type="radio" value="male" required class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 bg-gray-800">
-                                <span class="ml-2 text-sm font-medium text-gray-300">Male</span>
-                            </label>
-                            <label class="flex items-center">
-                                <input id="sex-other" name="sex" type="radio" value="other" required class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 bg-gray-800">
-                                <span class="ml-2 text-sm font-medium text-gray-300">Other</span>
-                            </label>
-                        </div>
+                        <label for="full-name" class="block text-sm font-medium">FULL NAME</label>
+                        <input type="text" id="full-name" name="Full Name" placeholder="First Last" required class="mt-1 block w-full rounded-md border-gray-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2">
                     </div>
-
                     <div>
-                        <label for="birthdate" class="block text-sm font-medium text-gray-300">BIRTHDATE (E.C)</label>
-                        <input type="date" id="birthdate" name="birthdate" required class="mt-1 block w-full rounded-md border-gray-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 bg-gray-800 text-white p-2">
+                        <label for="age" class="block text-sm font-medium">AGE (>=18)</label>
+                        <input type="number" id="age" name="Age" min="18" placeholder="e.g., 25" required class="mt-1 block w-full rounded-md border-gray-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2">
+                    </div>
+                    <div>
+                        <label for="birthdate" class="block text-sm font-medium">BIRTHDATE (E.C)</label>
+                        <input type="date" id="birthdate" name="Birthdate (E.C)" required class="mt-1 block w-full rounded-md border-gray-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium">SEX</label>
+                        <select id="sex" name="Sex" required class="mt-1 block w-full rounded-md border-gray-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2">
+                            <option value="">Select an option</option>
+                            <option value="female">Female</option>
+                            <option value="male">Male</option>
+                            <option value="other">Other</option>
+                        </select>
                     </div>
                 </div>
+                <div class="flex justify-end mt-8">
+                    <button type="button" id="next1" class="py-2 px-6 rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 transition ease-in-out duration-300">Next</button>
+                </div>
+            </div>
 
-                <!-- Contact & Location Section -->
-                <div class="space-y-6">
+            <div id="step2" class="step-content">
+                <h2 class="text-2xl font-bold mb-6 text-center">2. Contact & Uploads</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                        <label for="phone-number" class="block text-sm font-medium text-gray-300">PHONE NUMBER</label>
-                        <input type="tel" id="phone-number" name="phone-number" pattern="\+251(9|7)[0-9]{8}" placeholder="+2519..." required class="mt-1 block w-full rounded-md border-gray-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 bg-gray-800 text-white p-2">
+                        <label for="phone-number" class="block text-sm font-medium">PHONE NUMBER</label>
+                        <input type="tel" id="phone-number" name="Phone Number" pattern="\+251(9|7)[0-9]{8}" placeholder="+2519..." required class="mt-1 block w-full rounded-md border-gray-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2">
                     </div>
-
                     <div>
-                        <label for="region" class="block text-sm font-medium text-gray-300">REGION</label>
-                        <select id="region" name="region" required class="mt-1 block w-full rounded-md border-gray-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 bg-gray-800 text-white p-2">
+                        <label for="region" class="block text-sm font-medium">REGION</label>
+                        <select id="region" name="Region" required class="mt-1 block w-full rounded-md border-gray-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2">
                             <option value="">Select a region</option>
                             <option value="AMHARA(Bahir Dar)">AMHARA(Bahir Dar)</option>
                             <option value="OROMIA(Adama)">OROMIA(Adama)</option>
@@ -138,10 +171,13 @@
                             <option value="Sidama(Hawasa)">Sidama(Hawasa)</option>
                         </select>
                     </div>
-
                     <div>
-                        <label for="level" class="block text-sm font-medium text-gray-300">LEVEL</label>
-                        <select id="level" name="level" required class="mt-1 block w-full rounded-md border-gray-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 bg-gray-800 text-white p-2">
+                        <label for="photo" class="block text-sm font-medium">Photo (passport size)</label>
+                        <input type="file" id="photo" name="Passport Photo" accept="image/*" required class="mt-1 block w-full text-sm text-gray-500">
+                    </div>
+                    <div>
+                        <label for="level" class="block text-sm font-medium">LEVEL</label>
+                        <select id="level" name="Level" required class="mt-1 block w-full rounded-md border-gray-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2">
                             <option value="">Select a level</option>
                             <option value="High(level-1)">High (level-1)</option>
                             <option value="Medium(level-2)">Medium (level-2)</option>
@@ -149,85 +185,100 @@
                         </select>
                     </div>
                 </div>
-            </div>
-
-            <!-- Uploads Section -->
-            <div class="space-y-6">
-                <div>
-                    <label for="photo" class="block text-sm font-medium text-gray-300">Photo (passport size)</label>
-                    <input type="file" id="photo" name="photo" accept="image/*" required class="mt-1 block w-full text-sm text-gray-400">
-                    <div id="photo-preview" class="mt-4 w-32 h-32 rounded-md overflow-hidden bg-gray-800 border border-gray-600 flex items-center justify-center text-gray-500 text-xs hidden">
-                        <img id="photo-image" src="#" alt="Photo Preview" class="w-full h-full object-cover">
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                        <label for="id-front" class="block text-sm font-medium text-gray-300">National ID (Front)</label>
-                        <input type="file" id="id-front" name="id-front" accept="image/*" required class="mt-1 block w-full text-sm text-gray-400">
-                    </div>
-                    <div>
-                        <label for="id-back" class="block text-sm font-medium text-gray-300">National ID (Back)</label>
-                        <input type="file" id="id-back" name="id-back" accept="image/*" required class="mt-1 block w-full text-sm text-gray-400">
-                    </div>
+                <div class="flex justify-between mt-8">
+                    <button type="button" id="prev1" class="py-2 px-6 rounded-md shadow-sm text-sm font-medium text-gray-300 bg-gray-600 hover:bg-gray-700 transition ease-in-out duration-300">Previous</button>
+                    <button type="button" id="next2" class="py-2 px-6 rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 transition ease-in-out duration-300">Next</button>
                 </div>
             </div>
 
-            <!-- Submit Button and Message -->
-            <div>
-                <button type="submit" id="submit-btn" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition ease-in-out duration-300">
-                    Register
-                </button>
-                <div id="success-message" class="mt-4 p-4 rounded-md text-sm text-center text-green-700 bg-green-100 border border-green-200 hidden">
-                    Registration request received. We will contact you soon.
+            <div id="step3" class="step-content">
+                <h2 class="text-2xl font-bold mb-6 text-center">3. Review and Confirm</h2>
+                <div id="review-content" class="space-y-4 text-gray-300 text-sm p-4 bg-gray-800 rounded-lg">
+                    <p>Review your information carefully before submitting.</p>
+                </div>
+                <div class="flex justify-between mt-8">
+                    <button type="button" id="prev2" class="py-2 px-6 rounded-md shadow-sm text-sm font-medium text-gray-300 bg-gray-600 hover:bg-gray-700 transition ease-in-out duration-300">Previous</button>
+                    <button type="submit" id="submit-btn" class="py-2 px-6 rounded-md shadow-sm text-sm font-medium text-white bg-green-600 hover:bg-green-700 transition ease-in-out duration-300">Submit</button>
                 </div>
             </div>
-        </form>
+
+            </form>
     </div>
     
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const form = document.getElementById('registrationForm');
-            const submitBtn = document.getElementById('submit-btn');
-            const successMessage = document.getElementById('success-message');
-            const photoInput = document.getElementById('photo');
-            const photoPreview = document.getElementById('photo-preview');
-            const photoImage = document.getElementById('photo-image');
+            const steps = [
+                document.getElementById('step1'),
+                document.getElementById('step2'),
+                document.getElementById('step3')
+            ];
+            const progressBarFill = document.getElementById('progressBarFill');
+            let currentStep = 0;
 
-            // Handle photo preview
-            photoInput.addEventListener('change', (event) => {
-                const file = event.target.files[0];
-                if (file) {
-                    const reader = new FileReader();
-                    reader.onload = (e) => {
-                        photoImage.src = e.target.result;
-                        photoPreview.classList.remove('hidden');
-                    };
-                    reader.readAsDataURL(file);
-                } else {
-                    photoPreview.classList.add('hidden');
+            const form = document.getElementById('multiStepForm');
+            const reviewContent = document.getElementById('review-content');
+            const submitBtn = document.getElementById('submit-btn');
+
+            const next1Btn = document.getElementById('next1');
+            const prev1Btn = document.getElementById('prev1');
+            const next2Btn = document.getElementById('next2');
+            const prev2Btn = document.getElementById('prev2');
+
+            function updateStep(newStep) {
+                steps.forEach(step => step.classList.remove('active'));
+                steps[(currentStep = newStep)].classList.add('active');
+                progressBarFill.style.width = `${(currentStep + 1) / steps.length * 100}%`;
+                if (currentStep === 2) {
+                    populateReviewPage();
+                }
+            }
+
+            function validateStep() {
+                let isValid = true;
+                const inputs = steps[currentStep].querySelectorAll('input, select');
+                inputs.forEach(input => {
+                    if (input.hasAttribute('required') && !input.value) {
+                        isValid = false;
+                        input.classList.add('border-red-500');
+                    } else {
+                        input.classList.remove('border-red-500');
+                    }
+                });
+                return isValid;
+            }
+
+            function populateReviewPage() {
+                const formData = new FormData(form);
+                let reviewHtml = '<div class="grid grid-cols-1 md:grid-cols-2 gap-4">';
+                for (const [key, value] of formData.entries()) {
+                    if (key !== 'Passport Photo' && key !== 'id-front' && key !== 'id-back') {
+                        const labelText = key;
+                        reviewHtml += `<div><strong class="text-gray-200">${labelText}:</strong> <span class="text-white">${value}</span></div>`;
+                    }
+                }
+                reviewHtml += '</div>';
+                reviewContent.innerHTML = reviewHtml;
+            }
+
+            next1Btn.addEventListener('click', () => {
+                if (validateStep()) {
+                    updateStep(1);
                 }
             });
-
-            // Handle form submission
-            form.addEventListener('submit', (event) => {
-                event.preventDefault(); // Prevent default form submission
-
-                submitBtn.innerHTML = 'Submitting...';
-                submitBtn.disabled = true;
-
-                // Simulate a delay for server processing (e.g., 2 seconds)
-                setTimeout(() => {
-                    // Reset button and show success message
-                    submitBtn.innerHTML = 'Registered!';
-                    submitBtn.classList.remove('bg-indigo-600', 'hover:bg-indigo-700');
-                    submitBtn.classList.add('bg-green-600', 'hover:bg-green-700');
-                    successMessage.classList.remove('hidden');
-
-                    // You could also clear the form here if needed:
-                    // form.reset();
-                }, 2000);
+            prev1Btn.addEventListener('click', () => updateStep(0));
+            next2Btn.addEventListener('click', () => {
+                if (validateStep()) {
+                    updateStep(2);
+                }
             });
+            prev2Btn.addEventListener('click', () => updateStep(1));
+
+            // The form will now submit normally to formsubmit.co without this block
+            // form.addEventListener('submit', (event) => {
+            //     // You can add a loading spinner here before redirecting
+            // });
+
+            updateStep(0);
         });
     </script>
 </body>
